@@ -11,9 +11,7 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 function blurring() {
     load++;
 
-    if(load > 99) {
-        clearInterval(int);
-    }
+    load > 99 ?? clearInterval(int);
 
     loadText.innerText = `${load}%`;
     loadText.style.opacity = scale(load, 0, 100, 1, 0);
